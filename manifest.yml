@@ -1,0 +1,11 @@
+---
+applications:
+- name: core-cf-microservice-pcf-app
+  buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack#v2.0.5
+  instances: 1
+  memory: 256M
+  # determines which environment to pull configs from
+  env:
+    ASPNETCORE_ENVIRONMENT: dev
+  services:
+    - ConfSer
